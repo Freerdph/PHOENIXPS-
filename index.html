@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phoenix PS</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Arial Black', sans-serif;
+      color: #fff;
+      text-align: center;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* Background image */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url("https://img.wattpad.com/cover/275243979-256-k807680.jpg") center center/cover no-repeat;
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: -1;
+    }
+
+    /* Judul efek api */
+    h1 {
+      font-size: 3.5rem;
+      color: #ff0000;
+      text-shadow: 0 0 15px #ff4500, 0 0 30px #ff6347, 0 0 60px #ff0000;
+      animation: flicker 1.5s infinite alternate, fireGlow 2s infinite alternate;
+    }
+
+    @keyframes flicker {
+      0% { text-shadow: 0 0 10px #ff6347, 0 0 20px #ff4500, 0 0 40px #ff0000; }
+      100% { text-shadow: 0 0 20px #ff0000, 0 0 50px #ff4500, 0 0 80px #ff6347; }
+    }
+
+    @keyframes fireGlow {
+      0% { color: #ff2200; }
+      100% { color: #ff6600; }
+    }
+
+    /* Tombol container */
+    .button-container {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: white;
+      background: linear-gradient(90deg, #ff0000, #ff4500);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 15px #ff4500, 0 0 30px #ff6347;
+      animation: buttonFire 1.8s infinite alternate;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #ff6347, 0 0 50px #ff2200;
+    }
+
+    @keyframes buttonFire {
+      0% { box-shadow: 0 0 10px #ff2200, 0 0 20px #ff4500; }
+      100% { box-shadow: 0 0 25px #ff4500, 0 0 60px #ff2200; }
+    }
+
+    /* Tombol Pesan */
+    .pesan-btn {
+      position: fixed;
+      bottom: 15px;
+      right: 15px;
+      background: linear-gradient(90deg, #ff0000, #ff4500);
+      border: none;
+      border-radius: 50px;
+      padding: 15px 20px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #fff;
+      box-shadow: 0 0 15px #ff4500;
+      z-index: 10;
+    }
+
+    /* Popup WA */
+    .popup {
+      display: none;
+      position: fixed;
+      bottom: 70px;
+      right: 15px;
+      background: rgba(0,0,0,0.9);
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #ff4500;
+      z-index: 11;
+    }
+
+    .popup button {
+      background: green;
+      border-radius: 8px;
+      padding: 10px 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔥 PHOENIX PS 🔥</h1>
+
+  <div class="button-container">
+    <button onclick="downloadHost()">HOST PHOENIX PS</button>
+    <button onclick="copyText('https://gtpshost.com/d/PhoenixPSS')">POWER TUNNEL</button>
+    <button onclick="copyText('174.138.20.235')">IOS</button>
+    <button onclick="copyText('174.138.20.235 growtopia1.com 174.138.20.235 growtopia2.com 174.138.20.235 www.growtopia1.com 174.138.20.235 www.growtopia2.com')">WINDOWS</button>
+  </div>
+
+  <!-- Tombol Pesan -->
+  <button class="pesan-btn" onclick="togglePopup()">💬 Pesan</button>
+
+  <!-- Popup WA -->
+  <div class="popup" id="popup">
+    <button onclick="location.href='https://chat.whatsapp.com/Gnc7av2mcwS5AfwpcuL92E?mode=ems_copy_t'">WHATSAPP PHOENIX PS</button>
+  </div>
+
+  <script>
+    function downloadHost() {
+      const blob = new Blob(
+        ["174.138.20.235 growtopia1.com\n174.138.20.235 growtopia2.com"],
+        { type: "text/plain" }
+      );
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "PhoenixPS_Host.txt";
+      link.click();
+    }
+
+    function copyText(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert("✅ Copied: " + text);
+      });
+    }
+
+    function togglePopup() {
+      const popup = document.getElementById("popup");
+      popup.style.display = (popup.style.display === "block") ? "none" : "block";
+    }
+  </script>
+</body>
+</html>
